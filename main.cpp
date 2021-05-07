@@ -1,7 +1,13 @@
 #include <iostream>
-#include <OGRE/Ogre.h>
+#include "data/Window.hpp"
 
 int main()
 {
-    Ogre::RenderWindow window;
+    Window Window;
+    
+    while(!Window.isOpen())
+    {
+
+    }
+    return 0;
 }
