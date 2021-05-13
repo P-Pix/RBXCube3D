@@ -1,15 +1,15 @@
-SRC = 	main.cpp\
+SRC		= 	main.cpp\
 
-OBJ = 	$(SRC:.cpp = .o)
+OBJ		= 	$(SRC:.cpp = .o)
 
-FLAGS =  
+MODULE	=	-logre-root\
 
-DATA = 	data/Window.cpp\
+DATA	= 	data/Window.cpp\
 
-NAME = 	main
+NAME	= 	main
 
 val:
-	@(valgrind g++ -o $(NAME) $(OBJ) $(DATA) $(FLAGS)) > /dev/null
+	@(valgrind g++ -o $(NAME) $(OBJ) $(DATA) $(MODULE))
 
 cpp:
-	@(g++ -o $(NAME) $(OBJ) $(DATA) $(FLAGS)) > /dev/null
+	@(g++ -o $(NAME) $(OBJ) $(DATA) $(MODULE))

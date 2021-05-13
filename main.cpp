@@ -5,7 +5,7 @@ int main()
 {
     Window Window;
     
-    while(!Window.isOpen())
+    while(Window.isOpen())
     {
 
     }
