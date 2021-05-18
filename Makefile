@@ -2,14 +2,16 @@ SRC		= 	main.cpp\
 
 OBJ		= 	$(SRC:.cpp = .o)
 
-MODULE	=	-logre-root\
+MODULE	=	
 
-DATA	= 	data/Window.cpp\
+DATA	= 	data/Window/Window.cpp\
 
-NAME	= 	main
+NAME	= 	RubixCube
 
 val:
 	@(valgrind g++ -o $(NAME) $(OBJ) $(DATA) $(MODULE))
+	@(./$(NAME))
 
 cpp:
 	@(g++ -o $(NAME) $(OBJ) $(DATA) $(MODULE))
+	@(./$(NAME))

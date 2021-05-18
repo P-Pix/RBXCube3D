@@ -1,5 +1,5 @@
 #include <iostream>
-#include "data/Window.hpp"
+#include "data/Window/Window.hpp"
 
 int main()
 {
