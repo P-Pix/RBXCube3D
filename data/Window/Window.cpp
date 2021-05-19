@@ -1,21 +1,10 @@
 #include "Window.hpp"
 
-#include <iostream>
-#include <string>
-#include <map>
-#include <alloca.h>
-
-#include <OGRE/Ogre.h>
-#include <OGRE/OgreRoot.h>
-#include <OGRE/OgreRenderWindow.h>
-#include <OGRE/OgreCamera.h>
-#include <OGRE/OgreRenderSystem.h>
-
 // Constructor / Destructor
     // COnstructor
         Window::Window()
         {
-            this -> m_Root -> loadPlugin("oignon.png");
+            this -> m_Root -> loadPlugin("plugins.cfg");
             /*this -> m_Root = new Ogre::Root::Root();
             std::cout << root -> showConfigDialog() << std::endl;
             this -> m_Root -> setRenderSystem(this -> m_RenderSystem);

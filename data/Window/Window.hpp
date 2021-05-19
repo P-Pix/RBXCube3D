@@ -6,10 +6,12 @@
 #include <OGRE/OgreRenderWindow.h>
 #include <OGRE/OgreCamera.h>
 #include <OGRE/OgreRenderSystem.h>
+#include <OGRE/OgrePlugin.h>
 
 #include <string>
 #include <map>
-
+#include <iostream>
+#include <alloca.h>
 class Window
 {
     public:
