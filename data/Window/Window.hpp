@@ -12,6 +12,12 @@
 #include <map>
 #include <iostream>
 #include <alloca.h>
+#include <vector>
+
+#include <GL/freeglut.h>
+#include <shared_mutex>
+#include <Cg/cgGL.h>
+
 class Window
 {
     public:
@@ -30,6 +36,8 @@ class Window
             // Basic
                 int m_widthwindow = 400,
                     m_heightwindow = 400;
+                
+                std::vector<int> bite;
 
             // Ogre
                 Ogre::Root *m_Root;

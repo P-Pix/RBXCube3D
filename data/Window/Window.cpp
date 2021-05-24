@@ -4,7 +4,7 @@
     // COnstructor
         Window::Window()
         {
-            this -> m_Root -> loadPlugin("plugins.cfg");
+            this -> m_Root -> loadPlugin("bitenbois");
             /*this -> m_Root = new Ogre::Root::Root();
             std::cout << root -> showConfigDialog() << std::endl;
             this -> m_Root -> setRenderSystem(this -> m_RenderSystem);

@@ -3,7 +3,7 @@
 
 int main()
 {
-    Window Window;
+    Window Window; 
     
     while(Window.isOpen())
     {
