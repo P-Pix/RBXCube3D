@@ -1,8 +1,2 @@
-# ai_solve_rubixcube
+# Rubix Cube 3D
 Goal : Create a AI to solve a Virtual RubixCube 
-
-You need to install Ogre for C++
-
-```
-sudo apt-get install libogre-dev
-```
