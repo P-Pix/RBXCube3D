@@ -18,10 +18,10 @@ SRC		=	main.cpp\
 NAME	= 	RubixCube.o
 
 val:
-	@(valgrind g++ -o $(NAME) $(OBJ) $(SRC) $(MODULE))
+	@(valgrind g++ -o $(NAME) $(SRC) $(MODULE))
 
 cpp:
-	@(g++ -o $(NAME) $(OBJ) $(SRC) $(MODULE))
+	@(g++ -o $(NAME) $(SRC) $(MODULE))
 
 exe:
 	@(./$(NAME))
