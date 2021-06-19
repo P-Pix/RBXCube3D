@@ -1,17 +1,27 @@
-SRC		= 	main.cpp\
+####
+### @file Makefile
+### @author Guillaume LEMONNIER
+### @brief 
+### @version 0.1
+### @date 2021-06-20
+### 
+### @copyright Copyright (c) 2021
+### 
+####
 
 OBJ		= 	$(SRC:.cpp = .o)
 
 MODULE	=	
 
-DATA	= 	data/Window/Window.cpp\
+SRC		=	main.cpp\
 
-NAME	= 	RubixCube
+NAME	= 	RubixCube.o
 
 val:
-	@(valgrind g++ -o $(NAME) $(OBJ) $(DATA) $(MODULE))
-	@(./$(NAME))
+	@(valgrind g++ -o $(NAME) $(OBJ) $(SRC) $(MODULE))
 
 cpp:
-	@(g++ -o $(NAME) $(OBJ) $(DATA) $(MODULE))
+	@(g++ -o $(NAME) $(OBJ) $(SRC) $(MODULE))
+
+exe:
 	@(./$(NAME))
