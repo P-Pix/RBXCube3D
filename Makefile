@@ -11,9 +11,18 @@
 
 OBJ		= 	$(SRC:.cpp = .o)
 
-MODULE	=	
+MODULE	=	-lglfw\
+			-lGL\
+			-lX11\
+			-lpthread\
+			-lXrandr\
+			-lXi\
+			-ldl\
 
 SRC		=	main.cpp\
+			\
+			src/Window/Constructor.cpp\
+			src/Window/Control.cpp\
 
 NAME	= 	RubixCube.o
 

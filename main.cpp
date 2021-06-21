@@ -10,9 +10,18 @@
  */
 
 #include <iostream>
+#include "include/Window.h"
 
 int main()
 {
-    std::cout << "Hello World" << std::endl;
+    Window Window;
+
+    while(Window.isOpen())
+    {
+        Window.pollEvent();
+    }
+
+    Window.~Window();
+    
     return 0;
 }
