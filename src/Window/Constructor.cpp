@@ -11,6 +11,8 @@
 
 #include "../../include/Window.h"
 
+///////////////////////////////////////
+
 Window::Window()
 {
     glfwInit();
@@ -28,12 +30,15 @@ Window::Window()
     glfwMakeContextCurrent(m_Window);
     glViewport(0, 0, m_windowwidth, m_windowheight);
 }
+
 Window::~Window()
 {
     glfwTerminate();
 }
 
-bool Window::isOpen()
+///////////////////////////////////////
+
+void Window::limitFramerate(unsigned int frame)
 {
-    return !glfwWindowShouldClose(m_Window);
+    
 }

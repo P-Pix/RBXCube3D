@@ -12,13 +12,18 @@
 #include <iostream>
 #include "include/Window.h"
 
+#include "src/operator/operator<<.cpp"
+
 int main()
 {
     Window Window;
 
+    std::cout << Window.getTrianglePoint() << std::endl;
+
     while(Window.isOpen())
     {
         Window.pollEvent();
+        Window.draw();
     }
 
     Window.~Window();

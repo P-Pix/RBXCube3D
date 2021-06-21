@@ -14,11 +14,10 @@
 
 #include <iostream>
 
-//#include <GLES3/gl32.h>
-//#include <EGL/egl.h>
-
 #include <GL/gl.h>
 #include <GLFW/glfw3.h>
+
+#include "Triangle.h"
 
 class Window
 {
@@ -35,8 +34,21 @@ class Window
         const char *m_windowname = "Window";
         ////////////////////////////////////////
 
-        /// Window 
+        /// GL Window 
         GLFWwindow *m_Window;
+
+        Triangle m_triangle;
+
+        ////////////////////////////////////////
+
+        /// Keyboard Control
+        void keyboardEvent(void);
+
+        /// Transform 8bit color value in [0, 1] value
+        /// \param value 8bit color value
+        /// \return [0, 1] value
+        float eightBitColor(float value);
+
 
     protected:
 
@@ -54,10 +66,19 @@ class Window
         /// \return True if window is open, false if not
         bool isOpen(void);
 
+        /// \return point vector
+        std::vector<std::vector<float>> getTrianglePoint(void);
+
         ////////////////////////////////////////
 
         /// Constrol checking
-        void pollEvent();
+        void pollEvent(void);
+
+        /// Limite fps number
+        void limitFramerate(unsigned int frame);
+
+        /// Draw all element
+        void draw(void);
 };
 
 #endif

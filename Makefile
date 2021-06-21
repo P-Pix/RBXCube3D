@@ -21,8 +21,15 @@ MODULE	=	-lglfw\
 
 SRC		=	main.cpp\
 			\
+			src/Window/Accessor.cpp\
 			src/Window/Constructor.cpp\
 			src/Window/Control.cpp\
+			src/Window/Draw.cpp\
+			\
+			src/Triangle/Accessor.cpp\
+			src/Triangle/Constructor.cpp\
+			src/Triangle/Position.cpp\
+
 
 NAME	= 	RubixCube.o
 
