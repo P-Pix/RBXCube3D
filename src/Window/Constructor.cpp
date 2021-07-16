@@ -1,44 +1,23 @@
 /**
  * @file Constructor.cpp
  * @author Guillaume LEMONNIER
- * @brief 
- * @version 0.1
- * @date 2021-06-20
+ * @date 2021-07-16
  * 
  * @copyright Copyright (c) 2021
  * 
  */
 
-#include "../../include/Window.h"
+#include "../../include/Window.hpp"
 
-///////////////////////////////////////
-
-Window::Window()
+Window::Window(void)
 {
     glfwInit();
-    glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
-    glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
-    glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
-    
-    //this -> m_Window = nullptr;
-    this -> m_Window = glfwCreateWindow(m_windowwidth, m_windowheight, m_windowname, NULL, NULL);
-
-    if(m_Window == NULL)
-    {
-        std::cout << "Window no create" << std::endl;
-    }
-    glfwMakeContextCurrent(m_Window);
-    glViewport(0, 0, m_windowwidth, m_windowheight);
+    glfwWindowHint(GLFW_CLIENT_API, GLFW_NO_API);
+    m_window = glfwCreateWindow(WINDOW_WIDTH, WINDOW_HEIGHT, m_window_name, nullptr, nullptr);
 }
 
-Window::~Window()
+Window::~Window(void)
 {
+    glfwDestroyWindow(m_window);
     glfwTerminate();
-}
-
-///////////////////////////////////////
-
-void Window::limitFramerate(unsigned int frame)
-{
-    
 }

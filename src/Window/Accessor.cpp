@@ -1,21 +1,15 @@
 /**
  * @file Accessor.cpp
  * @author Guillaume LEMONNIER
- * @brief 
- * @version 0.1
- * @date 2021-06-21
+ * @date 2021-07-16
  * 
  * @copyright Copyright (c) 2021
  * 
  */
 
-#include "../../include/Window.h"
+#include "../../include/Window.hpp"
 
-bool Window::isOpen()
+bool Window::isOpen(void)
 {
-    return !glfwWindowShouldClose(m_Window);
-}
-std::vector<std::vector<float>> Window::getTrianglePoint()
-{
-    return m_triangle.getListPoint();
+    return !glfwWindowShouldClose(m_window);
 }
