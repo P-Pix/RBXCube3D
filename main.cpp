@@ -18,7 +18,7 @@ int main(void)
     while(Window.isOpen()) 
     {
         Window.pollEvent();
+        Window.draw();
     }
-    Window.~Window();
     return EXIT_SUCCESS;
 }

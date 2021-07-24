@@ -26,6 +26,8 @@ SRC		=	main.cpp\
 			src/Window/Accessor.cpp\
 			src/Window/Constructor.cpp\
 			src/Window/Control.cpp\
+			src/Window/Draw.cpp\
+			src/Window/Instance.cpp\
 			\
 			src/Triangle/Constructor.cpp\
 
