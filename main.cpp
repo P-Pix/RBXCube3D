@@ -8,17 +8,23 @@
  */
 
 #include "include/Window.hpp"
+#include "include/Rubix.hpp"
 
+/// main function
 int main(void);
 
 int main(void)
 {
+    Rubix rubix;
+    /*
+    __cplusplus;
     Window Window;
 
-    while(Window.isOpen()) 
+    while(Window.isOpen() && Window.wouldOpen()) 
     {
         Window.pollEvent();
         Window.draw();
     }
+    */
     return EXIT_SUCCESS;
 }

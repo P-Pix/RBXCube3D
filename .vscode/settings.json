@@ -67,6 +67,8 @@
         "csignal": "cpp",
         "strstream": "cpp",
         "cfenv": "cpp",
-        "valarray": "cpp"
+        "valarray": "cpp",
+        "cassert": "cpp",
+        "climits": "cpp"
     }
 }

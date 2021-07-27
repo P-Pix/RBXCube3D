@@ -10,14 +10,18 @@
 #include "../../include/Window.hpp"
 
 Window::Window(void)
-{
+{ 
     glfwInit();
     glfwWindowHint(GLFW_CLIENT_API, GLFW_NO_API);
-    m_window = glfwCreateWindow(WINDOW_WIDTH, WINDOW_HEIGHT, m_window_name, nullptr, nullptr);
+    m_Window = glfwCreateWindow(WINDOW_WIDTH, WINDOW_HEIGHT, m_Window_name, nullptr, nullptr);
     createInstance();
     setupDebugMesage();
-    //pickPhysicalDevice();
-    glfwCreateWindowSurface(m_instance, m_window, nullptr, &m_Surface);
+    pickPhysicalDevice();
+    glfwCreateWindowSurface(m_instance, m_Window, nullptr, &m_Surface);
+    createSurface();
+    pickPhysicalDevice();
+    createImageViews();
+    createGraphicsPipeline();
 }
 
 Window::~Window(void)
@@ -27,7 +31,7 @@ Window::~Window(void)
 
 void Window::setupDebugMesage(void)
 {
-
+    
 }
 void Window::pickPhysicalDevice(void)
 {
@@ -42,8 +46,12 @@ void Window::pickPhysicalDevice(void)
 
 void Window::close(void)
 {
+    for(uint i = 0; i < m_SwapChainImageViews.size(); i ++) 
+    {
+        vkDestroyImageView(m_device, m_SwapChainImageViews[i], nullptr);
+    }
     vkDestroySurfaceKHR(m_instance, m_Surface, nullptr);
     vkDestroyInstance(m_instance, nullptr);
-    glfwDestroyWindow(m_window);
+    glfwDestroyWindow(m_Window);
     glfwTerminate();
 }

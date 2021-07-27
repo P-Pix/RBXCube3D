@@ -23,11 +23,16 @@ MODULE	=	-lglfw\
 
 SRC		=	main.cpp\
 			\
+			src/Rubix/Accessor.cpp\
+			src/Rubix/Action.cpp\
+			src/Rubix/Constructor.cpp\
+			\
 			src/Window/Accessor.cpp\
 			src/Window/Constructor.cpp\
 			src/Window/Control.cpp\
 			src/Window/Draw.cpp\
 			src/Window/Instance.cpp\
+			src/Window/Surface.cpp\
 			\
 			src/Triangle/Constructor.cpp\
 

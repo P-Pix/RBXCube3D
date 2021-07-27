@@ -16,9 +16,7 @@
 
 #include <vulkan/vulkan.hpp>
 #include <GLFW/glfw3.h>
-
-#include <glm/vec4.hpp>
-#include <glm/mat4x4.hpp>
+#include <glm/glm.hpp>
 
 #define WINDOW_WIDTH    800
 #define WINDOW_HEIGHT   600
@@ -27,29 +25,36 @@ class Window
 {
     private:
         /// Window name
-        const char *m_window_name = "Rubix Cube";
+        const char *m_Window_name = "Rubix Cube";
 
-        /*
-        struct QueueFamilyIndices 
+        bool m_open = true;
+
+        std::vector<VkImageView> m_SwapChainImageViews;
+        std::vector<VkImage> m_SwapChainImage;
+
+        glm::vec2 positions[3] = 
         {
-            std::optional<uint32_t> graphicsFamily;
-            std::optional<uint32_t> presentFamily;
-            bool isComplete() 
-            {
-                return graphicsFamily.has_value() && presentFamily.has_value();
-            }
+            glm::vec2(0.0, -0.5),
+            glm::vec2(0.5, 0.5),
+            glm::vec2(-0.5, 0.5),
         };
-        */
+
+        glm::vec4 vect4d = glm::vec4(positions[0], 0.0, 1.0);
 
         /// Window
-        GLFWwindow *m_window;
+        GLFWwindow *m_Window;
 
         VkInstance m_instance;
         VkSurfaceKHR m_Surface;
+        VkDevice m_device;
+        VkFormat m_SwapChainImageFormat;
 
         void createInstance(void);
         void setupDebugMesage(void);
         void pickPhysicalDevice(void);
+        void createSurface(void);
+        void createImageViews(void);
+        void createGraphicsPipeline(void);
 
         /// Drawing function
         void allDrawing(void);
@@ -69,6 +74,8 @@ class Window
 
         /// \return true if the window is open
         bool isOpen(void);
+
+        bool wouldOpen(void);
 
         ////////////////////////////////////////
 

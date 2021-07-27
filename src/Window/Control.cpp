@@ -12,8 +12,9 @@
 void Window::pollEvent(void)
 {
     glfwPollEvents();
-    if(glfwGetKey(m_window, GLFW_KEY_ESCAPE))
+    if(glfwGetKey(m_Window, GLFW_KEY_ESCAPE))
     {
         close();
+        m_open = false;
     }
 }

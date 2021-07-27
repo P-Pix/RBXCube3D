@@ -11,5 +11,10 @@
 
 bool Window::isOpen(void)
 {
-    return !glfwWindowShouldClose(m_window);
+    return !glfwWindowShouldClose(m_Window);
+}
+
+bool Window::wouldOpen(void)
+{
+    return m_open;
 }
