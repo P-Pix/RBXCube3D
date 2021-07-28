@@ -50,13 +50,13 @@ class Rubix
         /// \param line the line who will moove
         void horizontalRight(int line);
 
-        /// rotation vertical right
+        /// rotation vertical down
         /// \param line the line who will moove
-        void verticalRight(int line);
+        void verticalDown(int line);
 
-        /// rotation vertical left
+        /// rotation vertical up
         /// \param line the line who will moove
-        void verticalLeft(int line);
+        void verticalUp(int line);
 
     public:
 

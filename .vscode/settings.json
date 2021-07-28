@@ -69,6 +69,9 @@
         "cfenv": "cpp",
         "valarray": "cpp",
         "cassert": "cpp",
-        "climits": "cpp"
+        "climits": "cpp",
+        "compare": "cpp",
+        "concepts": "cpp",
+        "ranges": "cpp"
     }
 }
