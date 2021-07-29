@@ -3,6 +3,8 @@
  * @author Guillaume LEMONNIER
  * @date 2021-07-27
  * 
+ * @brief Rubix header with his construction and his action
+ * 
  * @copyright Copyright (c) 2021
  * 
  */
@@ -26,6 +28,14 @@
 #define FACE_NUMBER     6
 #define CASE_PER_FACE   9
 
+/**
+***     1
+*** 2   0   3
+***     4
+***     5
+***
+*** action refert by 0
+**/
 class Rubix
 {
     private:
@@ -42,21 +52,29 @@ class Rubix
         /// Rubix cube random shuffle
         void randomShuffle(void);
 
-        /// rotation horizontal left
+        /// rotation left on axe y
         /// \param line the line who will moove
         void horizontalLeft(int line);
 
-        /// rotation horizontal right
+        /// rotation right on axe y
         /// \param line the line who will moove
         void horizontalRight(int line);
 
-        /// rotation vertical down
+        /// rotation down one axe x
         /// \param line the line who will moove
         void verticalDown(int line);
 
-        /// rotation vertical up
+        /// rotation up on axe x
         /// \param line the line who will moove
         void verticalUp(int line);
+
+        /// rotation right one axe z
+        /// \param line the line who will moove
+        void rotationRight(int line);
+
+        /// rotation left on axe z
+        /// \param line the line who will moove
+        void rotationLeft(int line);
 
     public:
 
