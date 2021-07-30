@@ -23,7 +23,7 @@ void Rubix::horizontalLeft(int line)
         {
             cases.push_back(i);
         }
-        // turn face 1
+	// turn face 1
     }
     else if(line == 1)
     {
@@ -39,6 +39,18 @@ void Rubix::horizontalLeft(int line)
             cases.push_back(i);
         }
         // turn face 4
+	int stock = m_RubixCube[4][0];
+        for(int i = 0; i < CASE_PER_FACE; i ++) 
+	{
+		if(i + 1 != m_RubixCube[4][i])
+		{
+			m_RubixCube[4][i] = m_RubixCube[4][i + 1];
+		}
+		else
+		{
+			m_RubixCube[4][i] = stock;
+		}
+	} 
     }
     int case0 = m_RubixCube[0][cases[0]];
     for(int i = 0; i < facemoving.size(); i ++)
