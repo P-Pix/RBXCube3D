@@ -24,6 +24,18 @@ void Rubix::horizontalLeft(int line)
             cases.push_back(i);
         }
 	// turn face 1
+	int stock = m_RubixCube[1][0];
+        for(int i = CASE_PER_FACE; i > 0; i --) 
+	{
+		if(i - m_RubixCube != 0)
+		{
+			m_RubixCube[1][i] = m_RubixCube[4][m_RubixCube.size() - i];
+		}
+		else
+		{
+			m_RubixCube[4][i] = stock;
+		}
+	}
     }
     else if(line == 1)
     {
