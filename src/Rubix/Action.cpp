@@ -27,13 +27,13 @@ void Rubix::horizontalLeft(int line)
 	int stock = m_RubixCube[1][0];
         for(int i = CASE_PER_FACE; i > 0; i --) 
 	{
-		if(i - m_RubixCube != 0)
+		if(i - 1 != 0)
 		{
-			m_RubixCube[1][i] = m_RubixCube[4][m_RubixCube.size() - i];
+			m_RubixCube[1][i] = m_RubixCube[4][CASE_PER_FACE - i];
 		}
 		else
 		{
-			m_RubixCube[4][i] = stock;
+			m_RubixCube[4][0] = stock;
 		}
 	}
     }
@@ -54,11 +54,11 @@ void Rubix::horizontalLeft(int line)
 	int stock = m_RubixCube[4][0];
         for(int i = 0; i < CASE_PER_FACE; i ++) 
 	{
-		if(i + 1 != m_RubixCube[4][i])
+		if(i + 1 != CASE_PER_FACE) 
 		{
 			m_RubixCube[4][i] = m_RubixCube[4][i + 1];
 		}
-		else
+		else if(i != (CASE_PER_FACE + 1) / 2)
 		{
 			m_RubixCube[4][i] = stock;
 		}
