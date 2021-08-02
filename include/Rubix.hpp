@@ -76,6 +76,48 @@ class Rubix
         /// \param line the line who will moove
         void rotationLeft(int line);
 
+        /**
+         * 0 1 2
+         * 3 4 5
+         * 6 7 8
+         * 
+         * x = 2 to 0
+         * y = 0 to 2
+         * j = (8 - x) - (3 * y)
+         * 
+         * 6 = 8
+         * 3 = 7
+         * 0 = 6
+         * 7 = 5
+         * 4 = 4
+         * 1 = 3
+         * 8 = 2
+         * 5 = 1
+         * 2 = 0
+         */
+        void rotationAfterLeftAction(int face);
+
+        /**
+         * 0 1 2
+         * 3 4 5
+         * 6 7 8
+         * 
+         * x = 0 to 2
+         * y = 2 to 0
+         * j = (8 - x) - (3 * y)
+         * 
+         * 2 = 8
+         * 5 = 7
+         * 8 = 6
+         * 1 = 5
+         * 4 = 4
+         * 7 = 3
+         * 0 = 2
+         * 3 = 1
+         * 6 = 0
+         */
+        void rotationAfterRightAction(int face);
+
     public:
 
         /// Default Constructor

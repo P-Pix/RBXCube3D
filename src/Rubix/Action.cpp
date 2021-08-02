@@ -11,7 +11,6 @@
 
 void Rubix::horizontalLeft(int line)
 {
-    //std::cout << "horizontal left" << std::endl;
     std::vector<int> cases, facemoving;
     facemoving.push_back(RED);
     facemoving.push_back(BLUE);
@@ -19,23 +18,43 @@ void Rubix::horizontalLeft(int line)
     facemoving.push_back(ORANGE);
     if(line == 0)
     {
+        std::vector<int> stock = m_RubixCube[1];
+        int x = 2, y = 0;
         for(int i = 0; i < CASE_PER_LINE; i ++)
         {
             cases.push_back(i);
         }
-	// turn face 1
-	int stock = m_RubixCube[1][0];
-        for(int i = CASE_PER_FACE; i > 0; i --) 
-	{
-		if(i - 1 != 0)
-		{
-			m_RubixCube[1][i] = m_RubixCube[4][CASE_PER_FACE - i];
-		}
-		else
-		{
-			m_RubixCube[4][0] = stock;
-		}
-	}
+        for(int i = CASE_PER_FACE - 1; i >= 0; i --) 
+        {
+            /**
+             * 0 1 2
+             * 3 4 5
+             * 6 7 8
+             * 
+             * x = 2 to 0
+             * y = 0 to 2
+             * j = (8 - x) - (3 * y)
+             * 
+             * 6 = 8
+             * 3 = 7
+             * 0 = 6
+             * 7 = 5
+             * 4 = 4
+             * 1 = 3
+             * 8 = 2
+             * 5 = 1
+             * 2 = 0
+             */
+
+            std::cout << (8 - x) - (3 * y) << std::endl;
+            m_RubixCube[1][(8 - x) - (3 * y)] = stock[i];
+            y ++;
+            if(y > 2)
+            {
+                x --;
+                y = 0;
+            }
+        }
     }
     else if(line == 1)
     {
@@ -51,18 +70,7 @@ void Rubix::horizontalLeft(int line)
             cases.push_back(i);
         }
         // turn face 4
-	int stock = m_RubixCube[4][0];
-        for(int i = 0; i < CASE_PER_FACE; i ++) 
-	{
-		if(i + 1 != CASE_PER_FACE) 
-		{
-			m_RubixCube[4][i] = m_RubixCube[4][i + 1];
-		}
-		else if(i != (CASE_PER_FACE + 1) / 2)
-		{
-			m_RubixCube[4][i] = stock;
-		}
-	} 
+	    
     }
     int case0 = m_RubixCube[0][cases[0]];
     for(int i = 0; i < facemoving.size(); i ++)
@@ -83,11 +91,11 @@ void Rubix::horizontalLeft(int line)
             }
         }
     }
+    std::cout << "horizontal left axis = " << line << std::endl;
 }
 
 void Rubix::horizontalRight(int line)
 {
-    //std::cout << "horizontal right" << std::endl;
     std::vector<int> cases, facemoving;
     facemoving.push_back(RED);
     facemoving.push_back(ORANGE);
@@ -135,12 +143,12 @@ void Rubix::horizontalRight(int line)
             }
         }
     }
+    std::cout << "horizontal right axis = " << line << std::endl;
 }
 
 void Rubix::verticalUp(int line)
 {
     /*
-    //std::cout << "vertical left" << std::endl;
     std::vector<int> cases;
     for(int i = 0; i < CASE_PER_LINE; i ++)
     {
@@ -166,12 +174,12 @@ void Rubix::verticalUp(int line)
         }
     }
     */
+    std::cout << "vertical left axis = " << line << std::endl;
 }
 
 void Rubix::verticalDown(int line)
 {
     /*
-    //std::cout << "vertical right" << std::endl;
     std::vector<int> cases;
     for(int i = 0; i < CASE_PER_LINE; i ++)
     {
@@ -197,14 +205,48 @@ void Rubix::verticalDown(int line)
         }
     }
     */
+    std::cout << "vertical right axis = " << line << std::endl;
 }
 
 void Rubix::rotationLeft(int line)
 {
-    //std::cout << "rotation left" << std::endl;
+    std::cout << "rotation left axis = " << line << std::endl;
 }
 
 void Rubix::rotationRight(int line)
 {
-    //std::cout << "rotation right" << std::endl;
+    std::cout << "rotation right axis = " << line << std::endl;
+}
+
+void Rubix::rotationAfterLeftAction(int face)
+{
+    std::vector<int> stock = m_RubixCube[face];
+    int x = 2, y = 0;
+    for(int i = 0; i < CASE_PER_FACE; i ++) 
+    {
+        std::cout << (8 - x) - (3 * y) << std::endl;
+        m_RubixCube[face][(8 - x) - (3 * y)] = stock[i];
+        y ++;
+        if(y > 2)
+        {
+            x --;
+            y = 0;
+        }
+    }
+}
+void Rubix::rotationAfterRightAction(int face)
+{
+    std::vector<int> stock = m_RubixCube[face];
+    int x = 2, y = 0;
+    for(int i = 0; i < CASE_PER_FACE; i ++) 
+    {
+        std::cout << (8 - x) - (3 * y) << std::endl;
+        m_RubixCube[face][(8 - x) - (3 * y)] = stock[i];
+        x ++;
+        if(x < 0)
+        {
+            x = 0;
+            y ++;
+        }
+    }
 }
