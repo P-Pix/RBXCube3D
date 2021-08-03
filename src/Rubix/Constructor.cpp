@@ -25,26 +25,34 @@ Rubix::~Rubix(void)
 
 void Rubix::randomShuffle(void)
 {
-    int valeur = std::rand() % 10;//10000000;
+    int valeur = std::rand() % 5;//10000000;
     for(int i = 0; i < valeur; i ++)
     {
-        int newval1 = std::rand();
-        int newval2 = std::rand();
-        if(newval1 % 4 == 0)
+        int newval1 = std::rand() % 6;
+        int newval2 = std::rand() % CASE_PER_LINE;
+        if(newval1 == 0)
         {
-            horizontalLeft(newval2 % CASE_PER_LINE);
+            horizontalLeft(newval2);
         }
-        else if(newval1 % 4 == 1)
+        else if(newval1 == 1)
         {
-            horizontalRight(newval2 % CASE_PER_LINE);
+            horizontalRight(newval2);
         }
-        else if(newval1 % 4 == 2)
+        else if(newval1 == 2)
         {
-            verticalDown(newval2 % CASE_PER_LINE);
+            verticalDown(newval2);
+        }
+        else if(newval1 == 3)
+        {
+            verticalUp(newval2);
+        }
+        else if(newval1 == 4)
+        {
+            rotationLeft(newval2);
         }
         else
         {
-            verticalUp(newval2 % CASE_PER_LINE);
+            rotationRight(newval2);
         }
     }
 }

@@ -24,9 +24,17 @@
 #define GREEN   4
 #define YELLOW  5
 
-#define CASE_PER_LINE   3
-#define FACE_NUMBER     6
-#define CASE_PER_FACE   9
+#define CASE_PER_LINE           3
+#define FACE_NUMBER             6
+#define CASE_PER_FACE           9
+#define FACE_MOVING_PER_ACTION  4
+
+#define CENTRAL_FACE    0
+#define UP_FACE         1
+#define LEFT_FACE       2
+#define RIGHT_FACE      3
+#define DOWN_FACE       4
+#define BACK_FACE       5
 
 /**
 ***     1
@@ -117,6 +125,8 @@ class Rubix
          * 6 = 0
          */
         void rotationAfterRightAction(int face);
+
+        std::vector<int> selectCases(int line);
 
     public:
 
