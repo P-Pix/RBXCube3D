@@ -31,7 +31,7 @@ std::ostream &operator<<(std::ostream &flux, std::vector<std::vector<int>> rubix
 {
     for(int i = 0; i < rubix.size(); i ++)
     {
-        flux << "########## " << i + 1 << " / " << rubix.size() << " #########" << std::endl << std::endl;
+        flux << "########## \e[1m" << i + 1 << " / " << rubix.size() << " \e[0m#########" << std::endl << std::endl;
         flux << rubix[i] << std::endl;
     }
     return flux;
