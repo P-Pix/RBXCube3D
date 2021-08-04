@@ -126,7 +126,9 @@ class Rubix
          */
         void backClockwiseRotation(int face);
 
-        std::vector<int> selectCases(int line);
+        std::vector<int> selectCasesHorizontal(int line);
+
+        std::vector<int> selectCasesVertical(int line);
 
         void rotationLine(std::vector<int> facemoving, std::vector<int> cases);
 

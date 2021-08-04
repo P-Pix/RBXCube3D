@@ -25,7 +25,7 @@ Rubix::~Rubix(void)
 
 void Rubix::randomShuffle(void)
 {
-    int valeur = std::rand() % 5;//10000000;
+    int valeur = std::rand() % 10000000;
     for(int i = 0; i < valeur; i ++)
     {
         int newval1 = std::rand() % 6;
