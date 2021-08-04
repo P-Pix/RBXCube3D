@@ -103,7 +103,7 @@ class Rubix
          * 5 = 1
          * 2 = 0
          */
-        void rotationAfterLeftAction(int face);
+        void clockwiseRotation(int face);
 
         /**
          * 0 1 2
@@ -124,9 +124,11 @@ class Rubix
          * 3 = 1
          * 6 = 0
          */
-        void rotationAfterRightAction(int face);
+        void backClockwiseRotation(int face);
 
         std::vector<int> selectCases(int line);
+
+        void rotationLine(std::vector<int> facemoving, std::vector<int> cases);
 
     public:
 

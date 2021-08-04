@@ -36,7 +36,7 @@ SRC		=	main.cpp\
 			\
 			src/Triangle/Constructor.cpp\
 
-NAME	= 	RubixCube.o
+NAME	= 	RubixCube.obj
 
 val:
 	@(valgrind g++ -o $(NAME) $(SRC) $(MODULE))
