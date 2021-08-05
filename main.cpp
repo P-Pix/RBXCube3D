@@ -16,6 +16,13 @@ int main(void);
 int main(void)
 {
     Rubix rubix;
+
+    while(!rubix.isComplet())
+    {
+        rubix.randomAction();
+    }
+
+    std::cout << rubix.getAction().size() << " actions for the resolution" << std::endl;
     /*
     __cplusplus;
     Window Window;

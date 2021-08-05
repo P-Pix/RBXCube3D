@@ -11,7 +11,7 @@
 
 void Rubix::horizontalLeft(int line)
 {
-    // std::cout << std::endl << "horizontal left axis = " << line << std::endl;
+    std::cout << std::endl << "horizontal left axis = " << line << std::endl;
     std::vector<int> cases, facemoving;
 
     /// make the order of moving face
@@ -37,7 +37,7 @@ void Rubix::horizontalLeft(int line)
 
 void Rubix::horizontalRight(int line)
 {
-    // std::cout << std::endl << "horizontal right axis = " << line << std::endl;
+    std::cout << std::endl << "horizontal right axis = " << line << std::endl;
     std::vector<int> cases, facemoving;
     facemoving.push_back(RED);
     facemoving.push_back(ORANGE);
@@ -57,7 +57,7 @@ void Rubix::horizontalRight(int line)
 
 void Rubix::verticalUp(int line)
 {
-    // std::cout << std::endl << "vertical left axis = " << line << std::endl;
+    std::cout << std::endl << "vertical left axis = " << line << std::endl;
     std::vector<int> cases, facemoving;
     facemoving.push_back(RED);
     facemoving.push_back(WHITE);
@@ -77,7 +77,7 @@ void Rubix::verticalUp(int line)
 
 void Rubix::verticalDown(int line)
 {
-    // std::cout << std::endl << "vertical right axis = " << line << std::endl;
+    std::cout << std::endl << "vertical right axis = " << line << std::endl;
     std::vector<int> cases, facemoving;
     facemoving.push_back(RED);
     facemoving.push_back(GREEN);
@@ -97,7 +97,7 @@ void Rubix::verticalDown(int line)
 
 void Rubix::rotationLeft(int line)
 {
-    // std::cout << std::endl << "rotation left axis = " << line << std::endl;
+    std::cout << std::endl << "rotation left axis = " << line << std::endl;
     std::vector<int> cases, facemoving;
     facemoving.push_back(WHITE);
     facemoving.push_back(BLUE);
@@ -117,7 +117,7 @@ void Rubix::rotationLeft(int line)
 
 void Rubix::rotationRight(int line)
 {
-    // std::cout << std::endl << "rotation right axis = " << line << std::endl;
+    std::cout << std::endl << "rotation right axis = " << line << std::endl;
     std::vector<int> cases, facemoving;
     facemoving.push_back(WHITE);
     facemoving.push_back(ORANGE);
@@ -198,5 +198,41 @@ void Rubix::rotationLine(std::vector<int> facemoving, std::vector<int> cases)
             m_RubixCube[facemoving[i]][cases[j]] = clone[facemoving[(i + 1) % facemoving.size()]][cases[j]];
             
         }
+    }
+}
+
+void Rubix::selectAction(int action, int line)
+{
+    determineAction(action, line);
+    m_action.push_back(action);
+}
+
+void Rubix::determineAction(int action, int line)
+{
+    action %= 6;
+    line %= 3;
+    if(action == 0)
+    {
+        horizontalLeft(line);
+    }
+    else if(action == 1)
+    {
+        horizontalRight(line);
+    }
+    else if(action == 2)
+    {
+        verticalDown(line);
+    }
+    else if(action == 3)
+    {
+        verticalUp(line);
+    }
+    else if(action == 4)
+    {
+        rotationLeft(line);
+    }
+    else
+    {
+        rotationRight(line);
     }
 }

@@ -51,6 +51,8 @@ class Rubix
         /// Rubix cube representation
         std::vector<std::vector<int>> m_RubixCube;
 
+        std::vector<int> m_action;
+
         /// Create the rubix cube
         void createRubix(void);
 
@@ -143,8 +145,22 @@ class Rubix
         /// \return true if rubix cube is finish, else if not
         bool isComplet(void);
 
+        /// determine the action
+        /// \param action action's number wanted (value = [0, 5])
+        /// \param line line's value (value = [0, 2])
+        void determineAction(int action, int line);
+
+        std::vector<std::vector<int>> getRubixCube(void);
+
+        std::vector<int> getAction(void);
+
+        /// select a random action
+        void randomAction(void);
+
         /// Select a action
-        void selectAction(void);
+        /// \param action ation's number wanted (value = [0, 5])
+        /// \param line line's value (value = [0, 2])
+        void selectAction(int action, int line);
 };
 
 #endif

@@ -28,32 +28,7 @@ void Rubix::randomShuffle(void)
     int valeur = std::rand() % 10000000;
     for(int i = 0; i < valeur; i ++)
     {
-        int newval1 = std::rand() % 6;
-        int newval2 = std::rand() % CASE_PER_LINE;
-        if(newval1 == 0)
-        {
-            horizontalLeft(newval2);
-        }
-        else if(newval1 == 1)
-        {
-            horizontalRight(newval2);
-        }
-        else if(newval1 == 2)
-        {
-            verticalDown(newval2);
-        }
-        else if(newval1 == 3)
-        {
-            verticalUp(newval2);
-        }
-        else if(newval1 == 4)
-        {
-            rotationLeft(newval2);
-        }
-        else
-        {
-            rotationRight(newval2);
-        }
+        randomAction();
     }
 }
 
@@ -75,4 +50,12 @@ void Rubix::createRubix(void)
     m_RubixCube.push_back(Orange);
     m_RubixCube.push_back(Green);
     m_RubixCube.push_back(Yellow);
+}
+
+void Rubix::randomAction(void)
+{
+    int newval1 = std::rand() % 6;
+    int newval2 = std::rand() % CASE_PER_LINE;
+    selectAction(newval1, newval2);
+    m_action.push_back(newval1);
 }

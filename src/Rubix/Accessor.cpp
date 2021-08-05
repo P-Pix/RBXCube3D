@@ -29,3 +29,13 @@ bool Rubix::rubixIsFinish(void)
     }
     return true;
 }
+
+std::vector<std::vector<int>> Rubix::getRubixCube(void)
+{
+    return m_RubixCube;
+}
+
+std::vector<int> Rubix::getAction(void)
+{
+    return m_action;
+}
