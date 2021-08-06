@@ -25,6 +25,7 @@ SRC		=	main.cpp\
 			\
 			src/Rubix/Accessor.cpp\
 			src/Rubix/Action.cpp\
+			src/Rubix/AI.cpp\
 			src/Rubix/Constructor.cpp\
 			\
 			src/Window/Accessor.cpp\

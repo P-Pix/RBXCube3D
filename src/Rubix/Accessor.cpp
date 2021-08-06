@@ -14,17 +14,26 @@ bool Rubix::isComplet(void)
     return rubixIsFinish();
 }
 
+bool Rubix::solvingFace(int face)
+{
+    int color = m_RubixCube[face][0];
+    for(int j = 0; j < CASE_PER_FACE; j ++)
+    {
+        if(m_RubixCube[face][j] != color)
+        {
+            return false;
+        }
+    }
+    return true;
+}
+
 bool Rubix::rubixIsFinish(void)
 {
     for(int i = 0; i < FACE_NUMBER; i ++)
     {
-        int color = m_RubixCube[i][0];
-        for(int j = 0; j < CASE_PER_FACE; j ++)
+        if(!solvingFace(i))
         {
-            if(m_RubixCube[i][j] != color)
-            {
-                return false;
-            }
+            return false;
         }
     }
     return true;

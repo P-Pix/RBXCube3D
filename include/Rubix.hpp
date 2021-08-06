@@ -36,6 +36,9 @@
 #define DOWN_FACE       4
 #define BACK_FACE       5
 
+#define FACE_SOLVED     1
+#define FACE_UNSOLVED   0
+
 /**
 ***     1
 *** 2   0   3
@@ -161,6 +164,11 @@ class Rubix
         /// \param action ation's number wanted (value = [0, 5])
         /// \param line line's value (value = [0, 2])
         void selectAction(int action, int line);
+
+        /// Analyse rubix cube for select the good action
+        void analyse(void);
+
+        bool solvingFace(int face);
 };
 
 #endif
