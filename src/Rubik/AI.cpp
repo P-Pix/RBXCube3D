@@ -7,9 +7,9 @@
  * 
  */
 
-#include "../../include/Rubix.hpp"
+#include "../../include/Rubik.hpp"
 
-void Rubix::analyse(void)
+void Rubik::analyse(void)
 {
     /// create first face
     if(!solvingFace(1))

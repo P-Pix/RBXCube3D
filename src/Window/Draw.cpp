@@ -19,6 +19,11 @@ void Window::allDrawing(void)
     
 }
 
+void Window::drawRubikCube(std::vector<std::vector<int>> Rubik)
+{
+    
+}
+
 void Window::createImageViews(void)
 {
     m_SwapChainImageViews.resize(m_SwapChainImage.size());

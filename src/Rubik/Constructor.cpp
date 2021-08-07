@@ -7,32 +7,35 @@
  * 
  */
 
-#include "../../include/Rubix.hpp"
-#include "../operator/printrubix.cpp"
+#include "../../include/Rubik.hpp"
+#include "../operator/printRubik.cpp"
 
-Rubix::Rubix(void)
+Rubik::Rubik(void)
 {
     std::srand(std::time(nullptr));
-    m_RubixCube.clear();
-    createRubix();
+    m_RubikCube.clear();
+    createRubik();
+    std::cout << m_RubikCube << std::endl;
     randomShuffle();
-    std::cout << m_RubixCube << std::endl;
+    std::cout << m_RubikCube << std::endl;
 }
-Rubix::~Rubix(void)
+
+Rubik::~Rubik(void)
 {
 
 }
 
-void Rubix::randomShuffle(void)
+void Rubik::randomShuffle(void)
 {
-    int valeur = std::rand() % 10000000;
+    int valeur = std::rand() % 1000000;
     for(int i = 0; i < valeur; i ++)
     {
         randomAction();
     }
+    m_action.clear();
 }
 
-void Rubix::createRubix(void)
+void Rubik::createRubik(void)
 {
     std::vector<int> Red, Blue, Yellow, Orange, White, Green;
     for(unsigned int i = 0; i < CASE_PER_FACE; i ++)
@@ -44,15 +47,15 @@ void Rubix::createRubix(void)
         Green.push_back(GREEN);
         Yellow.push_back(YELLOW);
     }
-    m_RubixCube.push_back(Red);
-    m_RubixCube.push_back(White);
-    m_RubixCube.push_back(Blue);
-    m_RubixCube.push_back(Orange);
-    m_RubixCube.push_back(Green);
-    m_RubixCube.push_back(Yellow);
+    m_RubikCube.push_back(Red);
+    m_RubikCube.push_back(White);
+    m_RubikCube.push_back(Blue);
+    m_RubikCube.push_back(Orange);
+    m_RubikCube.push_back(Green);
+    m_RubikCube.push_back(Yellow);
 }
 
-void Rubix::randomAction(void)
+void Rubik::randomAction(void)
 {
     int newval1 = std::rand() % 6;
     int newval2 = std::rand() % CASE_PER_LINE;

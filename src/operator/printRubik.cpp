@@ -1,5 +1,5 @@
 /**
- * @file printrubix.cpp
+ * @file printRubik.cpp
  * @author Guillaume LEMONNIER
  * @date 2021-07-28
  * 
@@ -9,10 +9,10 @@
 #include <iostream>
 #include <vector>
 
-#include "../../include/Rubix.hpp"
+#include "../../include/Rubik.hpp"
 
-#ifndef _PRINT_RUBIX_
-#define _PRINT_RUBIX_
+#ifndef _PRINT_Rubik_
+#define _PRINT_Rubik_
 
 std::ostream &operator<<(std::ostream &flux, std::vector<int> line)
 {
@@ -27,12 +27,12 @@ std::ostream &operator<<(std::ostream &flux, std::vector<int> line)
     }
     return flux;
 }
-std::ostream &operator<<(std::ostream &flux, std::vector<std::vector<int>> rubix)
+std::ostream &operator<<(std::ostream &flux, std::vector<std::vector<int>> Rubik)
 {
-    for(int i = 0; i < rubix.size(); i ++)
+    for(int i = 0; i < Rubik.size(); i ++)
     {
-        flux << "########## \e[1m" << i + 1 << " / " << rubix.size() << " \e[0m#########" << std::endl << std::endl;
-        flux << rubix[i] << std::endl;
+        flux << "########## \e[1m" << i + 1 << " / " << Rubik.size() << " \e[0m#########" << std::endl << std::endl;
+        flux << Rubik[i] << std::endl;
     }
     return flux;
 }

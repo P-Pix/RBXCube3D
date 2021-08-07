@@ -23,10 +23,10 @@ MODULE	=	-lglfw\
 
 SRC		=	main.cpp\
 			\
-			src/Rubix/Accessor.cpp\
-			src/Rubix/Action.cpp\
-			src/Rubix/AI.cpp\
-			src/Rubix/Constructor.cpp\
+			src/Rubik/Accessor.cpp\
+			src/Rubik/Action.cpp\
+			src/Rubik/AI.cpp\
+			src/Rubik/Constructor.cpp\
 			\
 			src/Window/Accessor.cpp\
 			src/Window/Constructor.cpp\
@@ -37,13 +37,15 @@ SRC		=	main.cpp\
 			\
 			src/Triangle/Constructor.cpp\
 
-NAME	= 	RubixCube.obj
+NAME	= 	RubikCube.obj
+
+VERSION	=	-std=c++2a\
 
 val:
-	@(valgrind g++ -o $(NAME) $(SRC) $(MODULE))
+	@(valgrind g++ -o $(NAME) $(SRC) $(MODULE) $(VERSION))
 
 cpp:
-	@(g++ -o $(NAME) $(SRC) $(MODULE))
+	@(g++ -o $(NAME) $(SRC) $(MODULE) $(VERSION))
 
 run:
 	@(./$(NAME))

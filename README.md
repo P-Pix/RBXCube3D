@@ -1,9 +1,9 @@
-# Rubix Cube 3D
-Goal : Create a AI to solve a Virtual RubixCube 
+# Rubik Cube 3D
+Goal : Create a AI to solve a Virtual RubikCube 
 
 ## Visual
 
 ### Window class
 
 ## Intern Code
-### Rubix class 
+### Rubik class 

@@ -7,19 +7,19 @@
  * 
  */
 
-#include "../../include/Rubix.hpp"
+#include "../../include/Rubik.hpp"
 
-bool Rubix::isComplet(void)
+bool Rubik::isComplet(void)
 {
-    return rubixIsFinish();
+    return RubikIsFinish();
 }
 
-bool Rubix::solvingFace(int face)
+bool Rubik::solvingFace(int face)
 {
-    int color = m_RubixCube[face][0];
+    int color = m_RubikCube[face][0];
     for(int j = 0; j < CASE_PER_FACE; j ++)
     {
-        if(m_RubixCube[face][j] != color)
+        if(m_RubikCube[face][j] != color)
         {
             return false;
         }
@@ -27,7 +27,7 @@ bool Rubix::solvingFace(int face)
     return true;
 }
 
-bool Rubix::rubixIsFinish(void)
+bool Rubik::RubikIsFinish(void)
 {
     for(int i = 0; i < FACE_NUMBER; i ++)
     {
@@ -39,12 +39,12 @@ bool Rubix::rubixIsFinish(void)
     return true;
 }
 
-std::vector<std::vector<int>> Rubix::getRubixCube(void)
+std::vector<std::vector<int>> Rubik::getRubikCube(void)
 {
-    return m_RubixCube;
+    return m_RubikCube;
 }
 
-std::vector<int> Rubix::getAction(void)
+std::vector<int> Rubik::getAction(void)
 {
     return m_action;
 }

@@ -1,16 +1,16 @@
 /**
- * @file Rubix.hpp
+ * @file Rubik.hpp
  * @author Guillaume LEMONNIER
  * @date 2021-07-27
  * 
- * @brief Rubix header with his construction and his action
+ * @brief Rubik header with his construction and his action
  * 
  * @copyright Copyright (c) 2021
  * 
  */
 
-#ifndef _RUBIX_HPP_
-#define _RUBIX_HPP_
+#ifndef _Rubik_HPP_
+#define _Rubik_HPP_
 
 #include <iostream>
 #include <vector>
@@ -47,22 +47,22 @@
 ***
 *** action refert by 0
 **/
-class Rubix
+class Rubik
 {
     private:
 
-        /// Rubix cube representation
-        std::vector<std::vector<int>> m_RubixCube;
+        /// Rubik cube representation
+        std::vector<std::vector<int>> m_RubikCube;
 
         std::vector<int> m_action;
 
-        /// Create the rubix cube
-        void createRubix(void);
+        /// Create the Rubik cube
+        void createRubik(void);
 
-        /// Test if the Rubix cube is finish
-        bool rubixIsFinish(void);
+        /// Test if the Rubik cube is finish
+        bool RubikIsFinish(void);
 
-        /// Rubix cube random shuffle
+        /// Rubik cube random shuffle
         void randomShuffle(void);
 
         /// rotation left on axe y
@@ -140,12 +140,12 @@ class Rubix
     public:
 
         /// Default Constructor
-        Rubix(void);
+        Rubik(void);
 
         /// Default destructor
-        ~Rubix(void);
+        ~Rubik(void);
 
-        /// \return true if rubix cube is finish, else if not
+        /// \return true if Rubik cube is finish, else if not
         bool isComplet(void);
 
         /// determine the action
@@ -153,7 +153,7 @@ class Rubix
         /// \param line line's value (value = [0, 2])
         void determineAction(int action, int line);
 
-        std::vector<std::vector<int>> getRubixCube(void);
+        std::vector<std::vector<int>> getRubikCube(void);
 
         std::vector<int> getAction(void);
 
@@ -165,10 +165,11 @@ class Rubix
         /// \param line line's value (value = [0, 2])
         void selectAction(int action, int line);
 
-        /// Analyse rubix cube for select the good action
+        /// Analyse Rubik cube for select the good action
         void analyse(void);
 
         bool solvingFace(int face);
+
 };
 
 #endif

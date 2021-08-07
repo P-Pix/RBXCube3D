@@ -25,7 +25,7 @@ class Window
 {
     private:
         /// Window name
-        const char *m_Window_name = "Rubix Cube";
+        const char *m_Window_name = "Rubik Cube";
 
         bool m_open = true;
 
@@ -83,6 +83,8 @@ class Window
         void pollEvent(void);
 
         void draw(void);
+
+        void drawRubikCube(std::vector<std::vector<int>> Rubik);
 };
 
 #endif
