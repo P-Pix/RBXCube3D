@@ -20,16 +20,25 @@
 #define RED     0
 #define WHITE   1
 #define BLUE    2
-#define ORANGE  3
-#define GREEN   4
-#define YELLOW  5
+#define GREEN   3
+#define YELLOW  4
+#define ORANGE  5
 
 #define CASE_PER_LINE           3
 #define FACE_NUMBER             6
 #define CASE_PER_FACE           9
 #define FACE_MOVING_PER_ACTION  4
+#define CASE_CENTRAL            4
+#define NUMBER_LINE             3
 
-#define CENTRAL_FACE    0
+#define FIRST_LINE      0
+#define SECOND_LINE     1
+#define THIRD_LINE      2
+#define FIRST_COLUMN    0
+#define SECOND_COLUMN   1
+#define THIRD_COLUMN    2
+
+#define FORWARD_FACE    0
 #define UP_FACE         1
 #define LEFT_FACE       2
 #define RIGHT_FACE      3
@@ -50,6 +59,11 @@
 class Rubik
 {
     private:
+        bool m_cross    = false;
+
+        int m_crosspatern   = 0;
+
+        std::vector<std::vector<int>> m_RotationFace;
 
         /// Rubik cube representation
         std::vector<std::vector<int>> m_RubikCube;
@@ -137,6 +151,8 @@ class Rubik
 
         void rotationLine(std::vector<int> facemoving, std::vector<int> cases);
 
+        bool cross(int face);
+
     public:
 
         /// Default Constructor
@@ -169,6 +185,8 @@ class Rubik
         void analyse(void);
 
         bool solvingFace(int face);
+
+        void printRubikCube(void);
 
 };
 

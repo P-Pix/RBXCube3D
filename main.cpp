@@ -21,10 +21,12 @@ int main(void)
     while(Window.isOpen() && !Rubik.isComplet()) 
     {
         Window.pollEvent();
-        Rubik.randomAction();
+        Rubik.analyse();
         Window.drawRubikCube(Rubik.getRubikCube());
         Window.draw();
     }
+
+    Rubik.printRubikCube();
 
     std::cout << Rubik.getAction().size() << " actions for the resolution" << std::endl;
     std::cout << "__cplusplus version = " << __cplusplus << std::endl;

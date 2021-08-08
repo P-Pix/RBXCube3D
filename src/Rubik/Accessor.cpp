@@ -48,3 +48,16 @@ std::vector<int> Rubik::getAction(void)
 {
     return m_action;
 }
+
+bool Rubik::cross(int face)
+{
+    int color = m_RubikCube[face][CASE_CENTRAL];
+    for(int i = 1; i < m_RubikCube[face].size(); i += 2)
+    {
+        if(color != m_RubikCube[face][i])
+        {
+            return false;
+        }
+    }
+    return true;
+}

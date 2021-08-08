@@ -16,12 +16,35 @@
 
 std::ostream &operator<<(std::ostream &flux, std::vector<int> line)
 {
-    for(int i = 0; i < CASE_PER_LINE; i ++)
+    for(int i = 0; i < (CASE_PER_FACE / CASE_PER_LINE); i ++)
     {
         flux << "| ";
         for(int j = 0; j < CASE_PER_LINE; j ++)
         {
-            flux << line[i * 3 + j] << " ";
+            if(line[i * 3 + j] == 0)
+            {
+                flux << "r ";
+            }
+            else if(line[i * 3 + j] == 1)
+            {
+                flux << "w ";
+            }
+            else if(line[i * 3 + j] == 2)
+            {
+                flux << "b ";
+            }
+            else if(line[i * 3 + j] == 3)
+            {
+                flux << "g ";
+            }
+            else if(line[i * 3 + j] == 4)
+            {
+                flux << "y ";
+            }
+            else if(line[i * 3 + j] == 5)
+            {
+                flux << "o ";
+            }
         }
         flux << "|" << std::endl;
     }

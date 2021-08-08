@@ -15,7 +15,7 @@ void Rubik::horizontalLeft(int line)
     std::vector<int> cases, facemoving;
 
     /// make the order of moving face
-    facemoving.push_back(CENTRAL_FACE);
+    facemoving.push_back(FORWARD_FACE);
     facemoving.push_back(LEFT_FACE);
     facemoving.push_back(BACK_FACE);
     facemoving.push_back(RIGHT_FACE);
@@ -39,7 +39,7 @@ void Rubik::horizontalRight(int line)
 {
     std::cout << std::endl << "horizontal right axis = " << line << std::endl;
     std::vector<int> cases, facemoving;
-    facemoving.push_back(CENTRAL_FACE);
+    facemoving.push_back(FORWARD_FACE);
     facemoving.push_back(RIGHT_FACE);
     facemoving.push_back(BACK_FACE);
     facemoving.push_back(LEFT_FACE);
@@ -59,7 +59,7 @@ void Rubik::verticalUp(int line)
 {
     std::cout << std::endl << "vertical left axis = " << line << std::endl;
     std::vector<int> cases, facemoving;
-    facemoving.push_back(CENTRAL_FACE);
+    facemoving.push_back(FORWARD_FACE);
     facemoving.push_back(UP_FACE);
     facemoving.push_back(BACK_FACE);
     facemoving.push_back(DOWN_FACE);
@@ -79,7 +79,7 @@ void Rubik::verticalDown(int line)
 {
     std::cout << std::endl << "vertical right axis = " << line << std::endl;
     std::vector<int> cases, facemoving;
-    facemoving.push_back(CENTRAL_FACE);
+    facemoving.push_back(FORWARD_FACE);
     facemoving.push_back(DOWN_FACE);
     facemoving.push_back(BACK_FACE);
     facemoving.push_back(UP_FACE);
@@ -105,7 +105,7 @@ void Rubik::rotationLeft(int line)
     facemoving.push_back(RIGHT_FACE);
     if(line == 0)
     {
-        backClockwiseRotation(CENTRAL_FACE);
+        backClockwiseRotation(FORWARD_FACE);
     }
     else if(line == 2)
     {
@@ -125,7 +125,7 @@ void Rubik::rotationRight(int line)
     facemoving.push_back(LEFT_FACE);
     if(line == 0)
     {
-        clockwiseRotation(CENTRAL_FACE);
+        clockwiseRotation(FORWARD_FACE);
     }
     else if(line == 2)
     {

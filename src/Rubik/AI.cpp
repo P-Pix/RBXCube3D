@@ -11,10 +11,44 @@
 
 void Rubik::analyse(void)
 {
-    /// create first face
-    if(!solvingFace(1))
+    /// create cross
+    if(!m_cross)
     {
-        
+        for(int i = 0; i < m_RubikCube.size(); i ++)
+        {
+            for(int j = 1; j < m_RubikCube[i].size(); j += 2)
+            {
+                if(m_RubikCube[i][j] == WHITE && i != 1)
+                {
+                    
+                }
+            }
+        }
+        if(cross(UP_FACE))
+        {
+            m_cross = true;
+        }
+        else
+        {
+            if(m_crosspatern == 0)
+            {
+                rotationLeft(FIRST_LINE);
+            }
+            else if(m_crosspatern == 1)
+            {
+                horizontalLeft(FIRST_LINE);
+            }
+            else if(m_crosspatern == 2)
+            {
+                verticalUp(FIRST_COLUMN);
+            }
+            else
+            {
+                horizontalRight(FIRST_LINE);
+            }
+            m_crosspatern ++;
+            m_crosspatern %= 4;
+        }
     }
 
     /// create first crown
