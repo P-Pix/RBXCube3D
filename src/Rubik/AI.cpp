@@ -32,19 +32,19 @@ void Rubik::analyse(void)
         {
             if(m_crosspatern == 0)
             {
-                rotationLeft(FIRST_LINE);
+                determineAction(ROTATION_LEFT, FIRST_LINE);
             }
             else if(m_crosspatern == 1)
             {
-                horizontalLeft(FIRST_LINE);
+                determineAction(HORIZONTAL_LEFT, FIRST_LINE);
             }
             else if(m_crosspatern == 2)
             {
-                verticalUp(FIRST_COLUMN);
+                determineAction(VERTICAL_UP, FIRST_COLUMN);
             }
             else
             {
-                horizontalRight(FIRST_LINE);
+                determineAction(HORIZONTAL_RIGHT, FIRST_LINE);
             }
             m_crosspatern ++;
             m_crosspatern %= 4;

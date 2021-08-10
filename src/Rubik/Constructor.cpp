@@ -18,11 +18,11 @@ Rubik::Rubik(void)
     printRubikCube();
     randomShuffle();
     printRubikCube();
+    m_action.clear();
 }
 
 Rubik::~Rubik(void)
 {
-
 }
 
 void Rubik::randomShuffle(void)
@@ -32,65 +32,26 @@ void Rubik::randomShuffle(void)
     {
         randomAction();
     }
-    m_action.clear();
 }
 
 void Rubik::createRubik(void)
 {
-    std::vector<int> Red, Blue, Yellow, Orange, White, Green;
+    std::vector<int> red, blue, yellow, orange, white, green;
     for(unsigned int i = 0; i < CASE_PER_FACE; i ++)
     {
-        Red.push_back(RED);
-        White.push_back(WHITE);
-        Blue.push_back(BLUE);
-        Orange.push_back(ORANGE);
-        Green.push_back(GREEN);
-        Yellow.push_back(YELLOW);
+        red.push_back(RED);
+        white.push_back(WHITE);
+        blue.push_back(BLUE);
+        orange.push_back(ORANGE);
+        green.push_back(GREEN);
+        yellow.push_back(YELLOW);
     }
-    m_RubikCube.push_back(Red);
-    m_RubikCube.push_back(White);
-    m_RubikCube.push_back(Blue);
-    m_RubikCube.push_back(Green);
-    m_RubikCube.push_back(Yellow);
-    m_RubikCube.push_back(Orange);
-
-    std::vector<int> Red, Blue, Yellow, Orange, White, Green;
-    Red.push_back(WHITE);
-    Red.push_back(GREEN);
-    Red.push_back(YELLOW);
-    Red.push_back(BLUE);
-
-    Blue.push_back(WHITE);
-    Blue.push_back(RED);
-    Blue.push_back(YELLOW);
-    Blue.push_back(ORANGE);
-
-    Yellow.push_back(RED);
-    Yellow.push_back(GREEN);
-    Yellow.push_back(ORANGE);
-    Yellow.push_back(BLUE);
-
-    Orange.push_back(WHITE);
-    Orange.push_back(GREEN);
-    Orange.push_back(YELLOW);
-    Orange.push_back(BLUE);
-
-    White.push_back(RED);
-    White.push_back(GREEN);
-    White.push_back(ORANGE);
-    White.push_back(BLUE);
-
-    Green.push_back(RED);
-    Green.push_back(YELLOW);
-    Green.push_back(ORANGE);
-    Green.push_back(WHITE);
-
-    m_RotationFace.push_back(Red);
-    m_RotationFace.push_back(White);
-    m_RotationFace.push_back(Blue);
-    m_RotationFace.push_back(Green);
-    m_RotationFace.push_back(Yellow);
-    m_RotationFace.push_back(Orange);
+    m_RubikCube.push_back(red);
+    m_RubikCube.push_back(white);
+    m_RubikCube.push_back(blue);
+    m_RubikCube.push_back(green);
+    m_RubikCube.push_back(yellow);
+    m_RubikCube.push_back(orange);
 }
 
 void Rubik::randomAction(void)

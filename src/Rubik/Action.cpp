@@ -35,6 +35,15 @@ void Rubik::horizontalLeft(int line)
     rotationLine(facemoving, cases);
 }
 
+void Rubik::rotationBackClockwise(int face)
+{
+    /// make moving face's list by the face
+    for(int i = 0; i < FACE_NUMBER; i ++)
+    {
+
+    }
+}
+
 void Rubik::horizontalRight(int line)
 {
     std::cout << std::endl << "horizontal right axis = " << line << std::endl;
@@ -141,7 +150,7 @@ void Rubik::clockwiseRotation(int face)
     int x = 2, y = 0;
     for(int i = 0; i < CASE_PER_FACE; i ++) 
     {
-        // std::cout << (8 - x) - (3 * y) << std::endl;
+        // std::cout << (8 - x) - (3 * y) << " = " << i << std::endl;
         m_RubikCube[face][(8 - x) - (3 * y)] = clone[i];
         y ++;
         if(y > 2)
@@ -157,7 +166,7 @@ void Rubik::backClockwiseRotation(int face)
     int x = 0, y = 2;
     for(int i = 0; i < CASE_PER_FACE; i ++) 
     {
-        // std::cout << (8 - x) - (3 * y) << std::endl;
+        // std::cout << (8 - x) - (3 * y) << " = " << i << std::endl;
         m_RubikCube[face][(8 - x) - (3 * y)] = clone[i];
         y --;
         if(y < 0)
@@ -209,8 +218,6 @@ void Rubik::selectAction(int action, int line)
 
 void Rubik::determineAction(int action, int line)
 {
-    action %= 6;
-    line %= 3;
     if(action == 0)
     {
         horizontalLeft(line);
@@ -235,4 +242,5 @@ void Rubik::determineAction(int action, int line)
     {
         rotationRight(line);
     }
+    m_action.push_back(line);
 }

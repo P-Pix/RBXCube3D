@@ -13,6 +13,7 @@
 #include <iostream>
 #include <vector>
 #include <cstdlib>
+#include <optional>
 
 #include <vulkan/vulkan.hpp>
 #include <GLFW/glfw3.h>

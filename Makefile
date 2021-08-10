@@ -39,7 +39,7 @@ SRC		=	main.cpp\
 
 NAME	= 	RubikCube.obj
 
-VERSION	=	-std=c++2a\
+VERSION	=	-std=c++20\
 
 val:
 	@(valgrind g++ -o $(NAME) $(SRC) $(MODULE) $(VERSION))

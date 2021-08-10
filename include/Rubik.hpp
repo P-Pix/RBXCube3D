@@ -17,13 +17,6 @@
 #include <cstdlib>
 #include <ctime>
 
-#define RED     0
-#define WHITE   1
-#define BLUE    2
-#define GREEN   3
-#define YELLOW  4
-#define ORANGE  5
-
 #define CASE_PER_LINE           3
 #define FACE_NUMBER             6
 #define CASE_PER_FACE           9
@@ -45,8 +38,22 @@
 #define DOWN_FACE       4
 #define BACK_FACE       5
 
+#define HORIZONTAL_LEFT     0
+#define HORIZONTAL_RIGHT    1
+#define VERTICAL_DOWN       2
+#define VERTICAL_UP         3
+#define ROTATION_LEFT       4
+#define ROTATION_RIGHT      5
+
 #define FACE_SOLVED     1
 #define FACE_UNSOLVED   0
+
+#define RED     0
+#define WHITE   1
+#define BLUE    2
+#define GREEN   3
+#define YELLOW  4
+#define ORANGE  5
 
 /**
 ***     1
@@ -63,7 +70,109 @@ class Rubik
 
         int m_crosspatern   = 0;
 
-        std::vector<std::vector<int>> m_RotationFace;
+        const std::vector<int>  m_RedLeft = 
+                                {
+                                    WHITE,
+                                    BLUE,
+                                    YELLOW,
+                                    GREEN
+                                },
+                                m_RedRight =
+                                {
+                                    WHITE,
+                                    GREEN,
+                                    YELLOW,
+                                    BLUE
+                                },
+                                m_WhiteLeft = 
+                                {
+                                    RED,
+                                    GREEN,
+                                    ORANGE,
+                                    BLUE
+                                },
+                                m_WhiteRight = 
+                                {
+                                    RED,
+                                    BLUE,
+                                    ORANGE,
+                                    GREEN
+                                },
+                                m_BlueLeft = 
+                                {
+                                    RED,
+                                    WHITE,
+                                    ORANGE,
+                                    YELLOW
+                                },
+                                m_BlueRight = 
+                                {
+                                    RED,
+                                    YELLOW,
+                                    ORANGE,
+                                    WHITE
+                                },
+                                m_GreenLeft = 
+                                {
+                                    RED,
+                                    YELLOW,
+                                    ORANGE,
+                                    WHITE
+                                },
+                                m_GreenRight = 
+                                {
+                                    RED,
+                                    WHITE,
+                                    ORANGE,
+                                    YELLOW
+                                },
+                                m_YellowLeft = 
+                                {
+                                    RED,
+                                    BLUE,
+                                    ORANGE,
+                                    GREEN
+                                },
+                                m_YellowRight = 
+                                {
+                                    RED,
+                                    GREEN,
+                                    ORANGE,
+                                    BLUE
+                                },
+                                m_OrangeLeft = 
+                                {
+                                    WHITE,
+                                    GREEN,
+                                    YELLOW,
+                                    BLUE
+                                },
+                                m_OrangeRight = 
+                                {
+                                    WHITE,
+                                    BLUE,
+                                    YELLOW,
+                                    GREEN
+                                };
+
+        const std::vector<std::vector<int>> m_RotationLeft = 
+                                            {
+                                                m_RedLeft,
+                                                m_WhiteLeft,
+                                                m_BlueLeft,
+                                                m_GreenLeft,
+                                                m_YellowLeft,
+                                                m_OrangeLeft,
+                                            },
+                                            m_RotationRight = 
+                                            {
+                                                m_RedRight,
+                                                m_WhiteRight,
+                                                m_BlueRight,
+                                                m_GreenRight,
+                                                m_YellowRight,
+                                                m_OrangeRight,
+                                            };
 
         /// Rubik cube representation
         std::vector<std::vector<int>> m_RubikCube;
@@ -102,6 +211,10 @@ class Rubik
         /// rotation left on axe z
         /// \param line the line who will moove
         void rotationLeft(int line);
+
+        void rotationBackClockwise(int face);
+
+        void rotationClockwise(int face);
 
         /**
          * 0 1 2
