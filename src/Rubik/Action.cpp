@@ -37,11 +37,8 @@ void Rubik::horizontalLeft(int line)
 
 void Rubik::rotationBackClockwise(int face)
 {
-    /// make moving face's list by the face
-    for(int i = 0; i < FACE_NUMBER; i ++)
-    {
-
-    }
+    backClockwiseRotation(face);
+    std::vector<int> listface = m_RotationLeft[face];
 }
 
 void Rubik::horizontalRight(int line)
@@ -205,6 +202,26 @@ void Rubik::rotationLine(std::vector<int> facemoving, std::vector<int> cases)
         for(int j = 0; j < cases.size(); j ++)
         {
             m_RubikCube[facemoving[i]][cases[j]] = clone[facemoving[(i + 1) % facemoving.size()]][cases[j]];
+            
+        }
+    }
+}
+
+void Rubik::backRotationLine(std::vector<int> facemoving, std::vector<int> cases)
+{
+    std::vector<std::vector<int>> clone = m_RubikCube;
+    for(int i = facemoving.size() - 1; i >= 0; i --)
+    {
+        for(int j = 0; j < cases.size(); j ++)
+        {
+            if(i == 0)
+            {
+                m_RubikCube[facemoving[i]][cases[j]] = clone[facemoving[facemoving.size() - 1]][cases[j]];
+            }
+            else
+            {
+                m_RubikCube[facemoving[i]][cases[j]] = clone[facemoving[i - 1]][cases[j]];
+            }
             
         }
     }

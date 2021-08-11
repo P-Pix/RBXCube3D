@@ -154,6 +154,15 @@ class Rubik
                                     YELLOW,
                                     GREEN
                                 };
+        
+        std::vector<int>    m_RedCase,
+                            m_WhiteCase,
+                            m_BlueCase,
+                            m_GreenCase,
+                            m_YellowCase,
+                            m_OrangeCase;
+        
+        std::vector<std::vector<int>> m_ListCase;
 
         const std::vector<std::vector<int>> m_RotationLeft = 
                                             {
@@ -264,7 +273,11 @@ class Rubik
 
         void rotationLine(std::vector<int> facemoving, std::vector<int> cases);
 
+        void backRotationLine(std::vector<int> facemoving, std::vector<int> cases);
+
         bool cross(int face);
+
+        void makeListCase(void);
 
     public:
 

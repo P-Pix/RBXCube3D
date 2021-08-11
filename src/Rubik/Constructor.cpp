@@ -23,6 +23,12 @@ Rubik::Rubik(void)
 
 Rubik::~Rubik(void)
 {
+
+}
+
+void Rubik::makeListCase(void)
+{
+    
 }
 
 void Rubik::randomShuffle(void)
