@@ -7,8 +7,8 @@
  * 
  */
 
-#include "include/Window.hpp"
-#include "include/Rubik.hpp"
+#include "../include/Window.hpp"
+#include "../include/Rubik.hpp"
 
 /// main function
 int main(void);
@@ -18,7 +18,7 @@ int main(void)
     Rubik Rubik;
     Window Window;
 
-    while(Window.isOpen() && !Rubik.isComplet()) 
+    while(false && Window.isOpen() && !Rubik.isComplet()) 
     {
         Window.pollEvent();
         Rubik.analyse();

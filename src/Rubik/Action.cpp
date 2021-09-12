@@ -11,7 +11,7 @@
 
 void Rubik::horizontalLeft(int line)
 {
-    std::cout << std::endl << "horizontal left axis = " << line << std::endl;
+    //std::cout << std::endl << "horizontal left axis = " << line << std::endl;
     std::vector<int> cases, facemoving;
 
     /// make the order of moving face
@@ -43,7 +43,7 @@ void Rubik::rotationBackClockwise(int face)
 
 void Rubik::horizontalRight(int line)
 {
-    std::cout << std::endl << "horizontal right axis = " << line << std::endl;
+    //std::cout << std::endl << "horizontal right axis = " << line << std::endl;
     std::vector<int> cases, facemoving;
     facemoving.push_back(FORWARD_FACE);
     facemoving.push_back(RIGHT_FACE);
@@ -63,7 +63,7 @@ void Rubik::horizontalRight(int line)
 
 void Rubik::verticalUp(int line)
 {
-    std::cout << std::endl << "vertical left axis = " << line << std::endl;
+    //std::cout << std::endl << "vertical left axis = " << line << std::endl;
     std::vector<int> cases, facemoving;
     facemoving.push_back(FORWARD_FACE);
     facemoving.push_back(UP_FACE);
@@ -83,7 +83,7 @@ void Rubik::verticalUp(int line)
 
 void Rubik::verticalDown(int line)
 {
-    std::cout << std::endl << "vertical right axis = " << line << std::endl;
+    //std::cout << std::endl << "vertical right axis = " << line << std::endl;
     std::vector<int> cases, facemoving;
     facemoving.push_back(FORWARD_FACE);
     facemoving.push_back(DOWN_FACE);
@@ -103,7 +103,7 @@ void Rubik::verticalDown(int line)
 
 void Rubik::rotationLeft(int line)
 {
-    std::cout << std::endl << "rotation left axis = " << line << std::endl;
+    //std::cout << std::endl << "rotation left axis = " << line << std::endl;
     std::vector<int> cases, facemoving;
     facemoving.push_back(UP_FACE);
     facemoving.push_back(LEFT_FACE);
@@ -123,7 +123,7 @@ void Rubik::rotationLeft(int line)
 
 void Rubik::rotationRight(int line)
 {
-    std::cout << std::endl << "rotation right axis = " << line << std::endl;
+    //std::cout << std::endl << "rotation right axis = " << line << std::endl;
     std::vector<int> cases, facemoving;
     facemoving.push_back(UP_FACE);
     facemoving.push_back(RIGHT_FACE);

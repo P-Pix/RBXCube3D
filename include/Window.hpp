@@ -15,9 +15,10 @@
 #include <cstdlib>
 #include <optional>
 
-#include <vulkan/vulkan.hpp>
 #include <GLFW/glfw3.h>
 #include <glm/glm.hpp>
+
+#include "freeglut-3.2.1/include/GL/freeglut.h"
 
 #define WINDOW_WIDTH    800
 #define WINDOW_HEIGHT   600
@@ -30,9 +31,6 @@ class Window
 
         bool m_open = true;
 
-        std::vector<VkImageView> m_SwapChainImageViews;
-        std::vector<VkImage> m_SwapChainImage;
-
         glm::vec2 positions[3] = 
         {
             glm::vec2(0.0, -0.5),
@@ -44,18 +42,6 @@ class Window
 
         /// Window
         GLFWwindow *m_Window;
-
-        VkInstance m_instance;
-        VkSurfaceKHR m_Surface;
-        VkDevice m_device;
-        VkFormat m_SwapChainImageFormat;
-
-        void createInstance(void);
-        void setupDebugMesage(void);
-        void pickPhysicalDevice(void);
-        void createSurface(void);
-        void createImageViews(void);
-        void createGraphicsPipeline(void);
 
         /// Drawing function
         void allDrawing(void);

@@ -21,7 +21,7 @@ MODULE	=	-lglfw\
 			-lvulkan\
 			-lXxf86vm\
 
-SRC		=	main.cpp\
+SRC		=	src/main.cpp\
 			\
 			src/Rubik/Accessor.cpp\
 			src/Rubik/Action.cpp\
@@ -32,14 +32,12 @@ SRC		=	main.cpp\
 			src/Window/Constructor.cpp\
 			src/Window/Control.cpp\
 			src/Window/Draw.cpp\
-			src/Window/Instance.cpp\
-			src/Window/Surface.cpp\
 			\
 			src/Triangle/Constructor.cpp\
 
 NAME	= 	RubikCube.obj
 
-VERSION	=	-std=c++20\
+VERSION	=	-std=c++2a\
 
 val:
 	@(valgrind g++ -o $(NAME) $(SRC) $(MODULE) $(VERSION))
