@@ -18,14 +18,18 @@ int main(void)
     Rubik Rubik;
     Window Window;
 
-    while(false && Window.isOpen() && !Rubik.isComplet()) 
+    std::cout << "_______" << std::endl;
+
+    Rubik.randomShuffle();
+
+    while(Window.isOpen() && !Rubik.isComplet() && !Window.wouldClose()) 
     {
         Window.pollEvent();
-        Rubik.analyse();
+        //Rubik.analyse();
         Window.drawRubikCube(Rubik.getRubikCube());
         Window.draw();
     }
-
+    
     Rubik.printRubikCube();
 
     std::cout << Rubik.getAction().size() << " actions for the resolution" << std::endl;

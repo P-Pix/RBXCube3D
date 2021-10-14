@@ -194,9 +194,6 @@ class Rubik
         /// Test if the Rubik cube is finish
         bool RubikIsFinish(void);
 
-        /// Rubik cube random shuffle
-        void randomShuffle(void);
-
         /// rotation left on axe y
         /// \param line the line who will moove
         void horizontalLeft(int line);
@@ -313,6 +310,9 @@ class Rubik
         bool solvingFace(int face);
 
         void printRubikCube(void);
+
+        /// Rubik cube random shuffle
+        void randomShuffle(void);
 
 };
 

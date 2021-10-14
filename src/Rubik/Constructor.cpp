@@ -16,8 +16,6 @@ Rubik::Rubik(void)
     m_RubikCube.clear();
     createRubik();
     printRubikCube();
-    randomShuffle();
-    printRubikCube();
     m_action.clear();
 }
 

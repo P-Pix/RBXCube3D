@@ -16,7 +16,7 @@ bool Rubik::isComplet(void)
 
 bool Rubik::solvingFace(int face)
 {
-    int color = m_RubikCube[face][0];
+    int color = m_RubikCube[face][4];
     for(int j = 0; j < CASE_PER_FACE; j ++)
     {
         if(m_RubikCube[face][j] != color)

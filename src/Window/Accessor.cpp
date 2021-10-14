@@ -14,7 +14,7 @@ bool Window::isOpen(void)
     return !glfwWindowShouldClose(m_Window);
 }
 
-bool Window::wouldOpen(void)
+bool Window::wouldClose(void)
 {
     return m_open;
 }

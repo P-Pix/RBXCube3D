@@ -23,22 +23,24 @@
 #define WINDOW_WIDTH    800
 #define WINDOW_HEIGHT   600
 
+#include "Rubik.hpp"
+
 class Window
 {
     private:
         /// Window name
-        const char *m_Window_name = "Rubik Cube";
+        const char *m_WindowName = "Rubik Cube";
 
-        bool m_open = true;
+        bool m_open = false;
 
-        glm::vec2 positions[3] = 
+        /*
+        GLfloat m_vertices[] =
         {
-            glm::vec2(0.0, -0.5),
-            glm::vec2(0.5, 0.5),
-            glm::vec2(-0.5, 0.5),
+                -0.5f, -0.5f, 0.0f,
+                0.5f, -0.5f, 0.0f,
+                0.0f, 0.5f, 0.0f
         };
-
-        glm::vec4 vect4d = glm::vec4(positions[0], 0.0, 1.0);
+         */
 
         /// Window
         GLFWwindow *m_Window;
@@ -62,7 +64,8 @@ class Window
         /// \return true if the window is open
         bool isOpen(void);
 
-        bool wouldOpen(void);
+        /// \return false if the window wouldn't close
+        bool wouldClose(void);
 
         ////////////////////////////////////////
 
